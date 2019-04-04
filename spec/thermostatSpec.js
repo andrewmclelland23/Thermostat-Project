@@ -48,4 +48,32 @@ describe('Thermostat', function(){
     };
     expect(thermostat.temperature).toEqual(32);
   });
+  describe('.reset', function(){
+    it('should increase reset temperature to 20', function(){
+      for (i = 1; i <= 5; i++){
+        thermostat.up();
+      };
+      expect(thermostat.reset()).toEqual(20);
+    })
+  })
+  describe('.showUsage', function(){
+    it('should show low usage when temperature is below 18', function(){
+      for (i = 1; i <= 3; i++){
+        thermostat.down();
+      };
+      expect(thermostat.showUsage()).toEqual('low-usage');
+    })
+    it('should show medium usage when temperature is above 17 and below 25', function(){
+      for (i = 1; i <= 2; i++){
+        thermostat.down();
+      };
+      expect(thermostat.showUsage()).toEqual('medium-usage');
+    })
+    it('should show high usage when temperature is above 24', function(){
+      for (i = 1; i <= 5; i++){
+        thermostat.up();
+      };
+      expect(thermostat.showUsage()).toEqual('high-usage');
+    })
+  })
 });
