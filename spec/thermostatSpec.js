@@ -23,4 +23,29 @@ describe('Thermostat', function(){
     }
     expect(thermostat.temperature).toEqual(10);
   })
+  it('should have powersaving mode on by default', function(){
+    expect(thermostat.powerSavingMode).toEqual(true);
+  });
+  it('should be able to switch powerSavingMode off', function(){
+    thermostat.switchPSM()
+    expect(thermostat.powerSavingMode).toEqual(false)
+  });
+  it('should be able to switch powerSavingMode on', function(){
+    thermostat.switchPSM()
+    thermostat.switchPSM()
+    expect(thermostat.powerSavingMode).toEqual(true)
+  });
+  it('if powerSavingMode is on, should not be able to raise temperature above 25', function(){
+    for (i = 1; i <= 10; i++){
+      thermostat.up();
+    };
+    expect(thermostat.temperature).toEqual(25);
+  });
+  it('if powerSavingMode is off, should not be able to raise temperature above 32', function(){
+    thermostat.switchPSM()
+    for (i = 1; i <= 20; i++){
+      thermostat.up();
+    };
+    expect(thermostat.temperature).toEqual(32);
+  });
 });
