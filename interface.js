@@ -1,6 +1,6 @@
 $(document).ready(function() {
   var thermostat = new Thermostat();
-  updateTemperature();
+  refreshTemperature();
   displayWeather('London');
 
   $('#temp-up').click(function() {
@@ -34,6 +34,19 @@ $(document).ready(function() {
   function updateTemperature() {
     $('#temperature').text(thermostat.temperature + '°C');
     $('#temperature').attr('class', thermostat.showUsage());
+    $.post('http://localhost:4567/temperature', `temperature=${thermostat.temperature}`)
+  };
+  function refreshTemperature() {
+    var promise = new Promise(function(resolve, reject) {
+      $.get('http://localhost:4567/temperature', function(response){
+        resolve(response);
+      })
+    })
+    promise.then(function(value){
+      thermostat.temperature = parseInt(value, 10);
+      $('#temperature').text(value + '°C');
+      $('#temperature').attr('class', thermostat.showUsage());
+    })
   };
 
   function displayWeather(city) {
@@ -41,7 +54,7 @@ $(document).ready(function() {
     var token = '&appid=a3d9eb01d4de82b9b8d0849ef604dbed';
     var units = '&units=metric';
     $.get(url + token + units, function(data) {
-      $('#local-outside-temp').text(data.main.temp);
+      $('#local-outside-temp').text(Math.round(data.main.temp));
       $('#city').text(city);
     })
   };

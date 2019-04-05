@@ -2,8 +2,17 @@
 @import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
 
 html {
-  background-image: url('https://www.muralswallpaper.co.uk/app/uploads/rundown-red-brick-textures-plain.jpg');
-  font-family: 'Nunito Sans', sans-serif;
+  background-image: url('background.jpg');
+  background-size: cover;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+input[type="text"] {
+  font-family: 'Share Tech Mono', monospace;
+}
+
+input[type="submit"] {
+  font-family: 'Share Tech Mono', monospace;
 }
 
 section {
@@ -16,6 +25,17 @@ section {
   border-right: #ccc 3px solid;
   border-bottom: #777 3px solid;
   border-left: #777 3px solid;
+}
+
+p {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+img {
+  margin-left: 20px;
+  width: 70px;
 }
 
 #temperature {
@@ -39,6 +59,7 @@ section {
   border-right: #ccc 3px solid;
   border-bottom: #777 3px solid;
   border-left: #777 3px solid;
+  font-family: 'Share Tech Mono', monospace;
 }
 
 .button {
@@ -49,6 +70,7 @@ section {
   border-right: #ccc 3px solid;
   border-bottom: #777 3px solid;
   border-left: #777 3px solid;
+  font-family: 'Share Tech Mono', monospace;
 }
 
 .psm-button-in {
@@ -64,6 +86,7 @@ section {
   border-right: #777 3px solid;
   border-bottom: #777 3px solid;
   border-left: #777 3px solid;
+  font-family: 'Share Tech Mono', monospace;
 }
 
 .psm-button-out {
@@ -76,6 +99,7 @@ section {
   border-right: #ccc 3px solid;
   border-bottom: #777 3px solid;
   border-left: #777 3px solid;
+  font-family: 'Share Tech Mono', monospace;
 }
 
 .low-usage {
@@ -91,14 +115,10 @@ section {
 }
 
 .left {
-  margin-top: 70px;
+  margin-top: 20px;
   width: 50%;
   float: left;
 }
-
-/* .top-left {
-  margin-top: 5px;
-} */
 
 .bottom-left {
   margin-left: 20px;
