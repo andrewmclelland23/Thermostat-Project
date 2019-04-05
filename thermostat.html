@@ -2,10 +2,17 @@
 <html>
   <head>
     <title>Thermostat</title>
+    <link rel='stylesheet' type='text/css' href='styles.css'/>
+    <meta charset="utf-8">
   </head>
   <body>
     <section>
       <h1 id="temperature"></h1>
+      <form id="select-city" action='/index'>
+        <input id="current-city" type="text" placeholder="Enter a city"></input>
+        <input type="submit"></input>
+      </form>
+      <div>Current Temperature in <span id='city'></span>: <span id='local-outside-temp'></span></div>
       <p>
         <button id="temp-up">+</button>
         <button id="temp-down">-</button>
@@ -17,5 +24,6 @@
     <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="src/thermostat.js"></script>
     <script src="interface.js"></script>
+    <div id='local-outside-temp2'></div>
   </body>
 </html>
