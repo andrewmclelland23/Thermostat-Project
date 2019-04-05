@@ -20,7 +20,7 @@ Thermostat.prototype.down = function () {
 };
 Thermostat.prototype.switchPSM = function(){
   this.powerSavingMode = !this.powerSavingMode
-  return this.powerSavingMode ? 'On' : 'Off'
+  return this.powerSavingMode
 }
 Thermostat.prototype.reset = function(){
   return this.temperature = 20;

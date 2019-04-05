@@ -1,6 +1,7 @@
 $(document).ready(function() {
   var thermostat = new Thermostat();
   updateTemperature();
+  displayWeather('London');
 
   $('#temp-up').click(function() {
     thermostat.up();
@@ -19,7 +20,8 @@ $(document).ready(function() {
 
   $('#powersaving-switch').click(function() {
     var psm = thermostat.switchPSM();
-    $('#power-saving-status').text(psm)
+    var buttonType = psm ? 'psm-button-in' : 'psm-button-out'
+    $('#powersaving-switch').attr('class', buttonType)
     updateTemperature();
   })
 
@@ -30,7 +32,7 @@ $(document).ready(function() {
   })
 
   function updateTemperature() {
-    $('#temperature').text(thermostat.temperature);
+    $('#temperature').text(thermostat.temperature + '°C');
     $('#temperature').attr('class', thermostat.showUsage());
   };
 

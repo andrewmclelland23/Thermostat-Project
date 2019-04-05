@@ -1,11 +1,111 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans');
+@import url('https://fonts.googleapis.com/css?family=Share+Tech+Mono');
+
+html {
+  background-image: url('https://www.muralswallpaper.co.uk/app/uploads/rundown-red-brick-textures-plain.jpg');
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+section {
+  background-color: gainsboro;
+  width: 500px;
+  height: 300px;
+  margin: 250px auto;
+  border-radius: 25px;
+  border-top: #ccc 3px solid;
+  border-right: #ccc 3px solid;
+  border-bottom: #777 3px solid;
+  border-left: #777 3px solid;
+}
+
+#temperature {
+  background-color: #C8E3BD;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow:         inset 0 0 10px #000000;
+  margin-left: 20px;
+  margin-right: 20px;
+  padding: 5px;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.temp-button {
+  background-color: darkgrey;
+  width: 60px;
+  height: 60px;
+  margin: 20px auto;
+  border-radius: 2px;
+  border-top: #ccc 3px solid;
+  border-right: #ccc 3px solid;
+  border-bottom: #777 3px solid;
+  border-left: #777 3px solid;
+}
+
+.button {
+  background-color: darkgrey;
+  margin: 10px auto;
+  border-radius: 2px;
+  border-top: #ccc 3px solid;
+  border-right: #ccc 3px solid;
+  border-bottom: #777 3px solid;
+  border-left: #777 3px solid;
+}
+
+.psm-button-in {
+  background-color: darkgrey;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow:         inset 0 0 10px #000000;
+  border-radius: 2px;
+  border-top: #777 3px solid;
+  border-right: #777 3px solid;
+  border-bottom: #777 3px solid;
+  border-left: #777 3px solid;
+}
+
+.psm-button-out {
+  background-color: darkgrey;
+  width: 60px;
+  height: 60px;
+  margin: 0 auto;
+  border-radius: 2px;
+  border-top: #ccc 3px solid;
+  border-right: #ccc 3px solid;
+  border-bottom: #777 3px solid;
+  border-left: #777 3px solid;
+}
+
 .low-usage {
   color: green;
 }
 
 .medium-usage {
-  color: blue;
+  color: DodgerBlue;
 }
 
 .high-usage {
-  color: red;
+  color: FireBrick;
+}
+
+.left {
+  margin-top: 70px;
+  width: 50%;
+  float: left;
+}
+
+/* .top-left {
+  margin-top: 5px;
+} */
+
+.bottom-left {
+  margin-left: 20px;
+}
+
+.right {
+  width: 50%;
+  float: right;
+  margin-top: 50px;
 }
